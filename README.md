@@ -5,13 +5,11 @@ Small cli python script for monitoring Ratings activity and threat modelling cer
 <br><br><br>
 ![Rolling's Analysis](https://media.discordapp.net/attachments/307258554581254144/783890501576949760/lmao.png)
 Thanks to Jylpah, Topdawg and RollingSwarm for useful input
-<<<<<<< HEAD
+
 <br>
 Note: Script will break if run outside season times, -u and -p needs finishing
-=======
 
 
->>>>>>> 871cdc855e783e821f156ef65ebf98b96215e304
 
 ## How to use
 
@@ -71,9 +69,5 @@ Colour Codes:
 
 
 <br><br><br>
-<<<<<<< HEAD
 oh yeah btw congrats to SPED for getting vibe checked by dual T57 Heavys and getting clapped 9-2 to RGN gg
-=======
-oh yeah btw congrats to SPED for getting vibe checked by dual T57 Heavys and getting clapped 9-2 to RGN gg wp ez
->>>>>>> 871cdc855e783e821f156ef65ebf98b96215e304
 ![GET REKT RAIK](https://media.discordapp.net/attachments/307258554581254144/783890466960572426/moe.gif)
