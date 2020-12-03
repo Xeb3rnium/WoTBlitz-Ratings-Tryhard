@@ -7,8 +7,9 @@ Small cli python script for monitoring Ratings activity and threat modelling cer
 Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 
 <br>
-Note: Script will break if run outside season times, -u and -p needs finishing
-
+# TEMPORARY NOTE 
+Script will break if run outside season times, -u and -p needs finishing
+Works only for EU server but you can change the regions in the urls to na, ru or asia
 
 
 ## How to use
