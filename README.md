@@ -5,10 +5,16 @@ Small cli python script for monitoring Ratings activity and threat modelling cer
 <br><br><br>
 ![Rolling's Analysis](https://media.discordapp.net/attachments/307258554581254144/783890501576949760/lmao.png)
 Thanks to Jylpah, Topdawg and RollingSwarm for useful input
+<br><br>
+
+# FUCK YOU TO WHOEVER DID THIS
+![Go Fuck Yourself](https://media.discordapp.net/attachments/307258554581254144/784519086259306506/Screenshot_20201204-1828112.png)
+
 
 <br>
-# TEMPORARY NOTE 
+## TEMPORARY NOTE 
 Script will break if run outside season times, -u and -p needs finishing
+<br>
 Works only for EU server but you can change the regions in the urls to na, ru or asia
 
 
