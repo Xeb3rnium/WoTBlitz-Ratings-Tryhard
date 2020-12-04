@@ -12,7 +12,7 @@ Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 
 
 <br>
-## TEMPORARY NOTE 
+# TEMPORARY NOTE 
 Script will break if run outside season times, -u and -p needs finishing
 <br>
 Works only for EU server but you can change the regions in the urls to na, ru or asia
@@ -61,14 +61,14 @@ Colour Codes:
 
 ## Platforms
  * OSX/Unix
- * Windows (yet to test)
- * Linux (should work)
+ * Windows (works on Powershell but breaks colours, better to use WSL)
+ * Linux
 
 ## Python Compatibility
  * 3.x (recommended)
 
 ## TODO
- + Finish <-u> parameter
+ + Finish <-u> and <-p> parameters
  + Refactor and clean up retarded lines
  + User selected region input for multiple leaderboards
  + Implement graphs and logged activity for better threat intelligence
