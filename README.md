@@ -11,11 +11,11 @@ Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 ![Go Fuck Yourself](https://media.discordapp.net/attachments/307258554581254144/784519086259306506/Screenshot_20201204-1828112.png)
 
 
-<br>
+
 # TEMPORARY NOTE 
-Script will break if run outside season times, -u and -p needs finishing
+Script will break if run outside season times, -u and -p needs finishing. Default also broken right now since not enough on Diamond leaderboard.
 <br>
-Works only for EU server but you can change the regions in the urls to na, ru or asia
+Works only for EU server but you can change the regions in the urls to na, ru or asia. Leagues can be changed to by changing 0 to 1, 2, 3 or 4
 
 
 ## How to use
