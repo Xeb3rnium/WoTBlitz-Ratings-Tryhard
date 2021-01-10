@@ -7,9 +7,6 @@ Small cli python script for monitoring Ratings activity and threat modelling cer
 Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 <br><br>
 
-# FUCK YOU TO WHOEVER DID THIS
-![Go Fuck Yourself](https://media.discordapp.net/attachments/307258554581254144/784519086259306506/Screenshot_20201204-1828112.png)
-
 
 
 # TEMPORARY NOTE 
@@ -69,7 +66,7 @@ Colour Codes:
 
 ## TODO
  + Finish <-u> and <-p> parameters
- + Refactor and clean up retarded lines
+ + Refactor and clean up lines
  + User selected region input for multiple leaderboards
  + Implement graphs and logged activity for better threat intelligence
  + howtoargparse.png
