@@ -5,8 +5,8 @@
 #TODO: User input str region
 import sys, requests, datetime, time, progress.bar
 
-APP_ID = "a125d0975020cd5d594f5b940fdaae60"
-HEADER = {"Accept-Encoding": "WoTBlitz Tryhard"}
+APP_ID = "10cb1b50b020398b190818886153a4e7"
+HEADER = {"User-Agent": "WoTBlitz Tryhard"}
 API = "https://api.wotblitz.eu/wotb/account/"
 RATINGS = "https://eu.wotblitz.com/en/api/rating-leaderboards/"
 
@@ -21,7 +21,7 @@ class colors:
 	red = '\033[91m'
 	orange = '\033[9m' # Not working on OSX? Need to fix
 	yellow = '\033[93m'
-	green = '\033[92m'	
+	green = '\033[92m'
 	cyan = '\033[96m'
 	blue = '\033[94m'
 	magenta = '\033[95m'
@@ -45,7 +45,7 @@ lastbattle = lambda uid, nick: curl(API + "info/?application_id=%s&account_id=%s
 
 
 def main(): # Yes I know I should be using argparse stfu
-	try:
+#	try:
 		if len(sys.argv) == 1:
 			init(30)
 		elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
@@ -56,8 +56,8 @@ def main(): # Yes I know I should be using argparse stfu
 			init(1, names=[str(sys.argv[2])])
 		else:
 			help()
-	except:
-		print(f"\n---------------{colors.cyan}Error Occured{colors.default}----------------\n")
+#	except:
+#		print(f"\n---------------{colors.cyan}Error Occured{colors.default}----------------\n")
 
 def init(rank, names=[]):
 	print(f"\n-----{colors.cyan}WoTBlitz Tryhard Ratings Tool v1.0{colors.default}-----\n")
@@ -85,6 +85,10 @@ def fetch(rank, names=[]):
 			except ConnectionError:
 				print("HTTP Request Error")
 		bar.finish
+		if len(hitlist) < rank:
+			rank = len(hitlist)
+			if rank == 0:
+				exit("Nobody on leaderboard")
 		battles = latest(rank, hitlist)
 
 
@@ -151,9 +155,8 @@ def latest(rank, hitlist):
 	with progress.bar.ChargingBar("Fetching Latest Battles:", max=30) as bar:
 		latest = []
 		try:
-			for i in range(rank):
-				posix = {hitlist[i]['spa_id']: lastbattle(hitlist[i]['spa_id'], hitlist[i]['nickname'])} # Is there an API call that takes in an array of UIDs instead of calling this 30 times?
-				latest.append(posix)
+			for i in range(rank): 
+				latest.append({hitlist[i]['spa_id']: lastbattle(hitlist[i]['spa_id'], hitlist[i]['nickname'])}) # Is there an API call that takes in an array of UIDs instead of calling this 30 times?
 				bar.next()
 		except ConnectionError:
 			print("HTTP Request Error")
@@ -209,6 +212,7 @@ def help():
 	print(f"    {colors.red}Offline within half a day{colors.default}")
 	print(f"    {colors.grey}Offline for most of the day{colors.default}")
 	print(f"    Offline for over a day\n")
+
 
 
 if __name__ == "__main__":
