@@ -2,7 +2,7 @@
 #
 # WoTBlitz Ratings threat intelligence tool for sweats like you and me! Ping me on Discord for any questions @ExtraBacon
 #
-#TODO: User input str region
+#TODO: User input str region and username list
 import sys, requests, datetime, time, progress.bar
 
 APP_ID = "10cb1b50b020398b190818886153a4e7"
@@ -66,7 +66,7 @@ def init(rank, names=[]):
 def fetch(rank, names=[]):
 	if names:
 		with progress.bar.ChargingBar("Fetching Your League:", max=1) as bar:
-			hitlist = [{'spa_id': userid(names), 'score': 0000, 'nickname': names[0], 'clan_tag': "AFK"}] # FIX THIS: STORE USERID TOO
+			hitlist = [{'spa_id': userid(names[0]), 'score': 0000, 'nickname': names[0], 'clan_tag': "AFK"}] # TODO: Figure out how to pull scores and clans
 			bar.next()
 		bar.finish
 		battles = latest(rank, hitlist)
@@ -91,9 +91,9 @@ def fetch(rank, names=[]):
 			plebs.next()
 	plebs.finish
 
-	for x in range(len(battles)): # TODO: User param ranges, spacer colour coding, cache/logging graphs
+	for x in range(len(battles)):
 		if names:
-			period = int(time.time()) - battles[0][userid(hitlist[0])] # FIX THIS: STORE USERID
+			period = int(time.time()) - battles[0][hitlist[0]['spa_id']]
 		else:
 			period = int(time.time()) - battles[x][hitlist[x]['spa_id']]
 		unit = "secs"
@@ -166,7 +166,7 @@ def help():
 	print("    -h, --help          Prints usage help")
 	print("    -c COUNT            Print custom top players count")
 	print("    -u USER             Check a player's rating and status")
-	print("    -p PLAYERS          Check list of given players ratings and statuses\n")
+	print("    -p PLAYERS          Check list of given players ratings and statuses\n") #TODO
 	print("Colour Codes:")
 	print(f"    {colors.green + colors.inverse}Active a minute ago or less{colors.default}")
 	print(f"    {colors.green + colors.bold}Active less than a battle ago{colors.default}")
