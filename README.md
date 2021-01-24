@@ -12,7 +12,7 @@ Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 # TEMPORARY NOTE 
 <br>
 Works only for EU server but you can change the regions in the urls to na, ru or asia.
-Leagues can be changed to by changing 0 to 1, 2, 3 or 4, <-u> parameter yet to be finished
+Leagues can be changed to by changing 0 to 1, 2, 3 or 4, <-u> and <-p> parameters yet to be finished
 
 
 ## How to use
@@ -69,7 +69,6 @@ Colour Codes:
  + Refactor and clean up lines
  + User selected region input for multiple leaderboards
  + Implement graphs and logged activity for better threat intelligence
- + howtoargparse.png
 
 
 <br><br><br>
