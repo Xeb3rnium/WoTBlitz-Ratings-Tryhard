@@ -10,9 +10,9 @@ Thanks to Jylpah, Topdawg and RollingSwarm for useful input
 
 
 # TEMPORARY NOTE 
-Script will break if run outside season times, -u and -p needs finishing. Default also broken right now since not enough on Diamond leaderboard.
 <br>
-Works only for EU server but you can change the regions in the urls to na, ru or asia. Leagues can be changed to by changing 0 to 1, 2, 3 or 4
+Works only for EU server but you can change the regions in the urls to na, ru or asia.
+Leagues can be changed to by changing 0 to 1, 2, 3 or 4, <-u> parameter yet to be finished
 
 
 ## How to use

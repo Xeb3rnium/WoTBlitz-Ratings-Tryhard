@@ -19,7 +19,7 @@ class realms:
 
 class colors:
 	red = '\033[91m'
-	orange = '\033[9m' # Not working on OSX? Need to fix
+	orange = '\033[9m'
 	yellow = '\033[93m'
 	green = '\033[92m'
 	cyan = '\033[96m'
@@ -40,12 +40,10 @@ userid = lambda nick: str(curl(API + "list/?application_id=%s&search=%s" % (APP_
 
 lastbattle = lambda uid, nick: curl(API + "info/?application_id=%s&account_id=%s" % (APP_ID, uid)).json()['data'][str(uid)]['last_battle_time'] if curl(API + "info/?application_id=%s&account_id=%s" % (APP_ID, uid)).json()['status'] == "ok" else exit("Error in fetching last battle timestamp")
 
-#ego = lambda test: curl(API + "info/?application_id=%s&account_id=%s" % (APP_ID, uid)).json()['data']
-
 
 
 def main(): # Yes I know I should be using argparse stfu
-#	try:
+	try:
 		if len(sys.argv) == 1:
 			init(30)
 		elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
@@ -56,8 +54,8 @@ def main(): # Yes I know I should be using argparse stfu
 			init(1, names=[str(sys.argv[2])])
 		else:
 			help()
-#	except:
-#		print(f"\n---------------{colors.cyan}Error Occured{colors.default}----------------\n")
+	except:
+		print(f"\n---------------{colors.cyan}Error Occured{colors.default}----------------\n")
 
 def init(rank, names=[]):
 	print(f"\n-----{colors.cyan}WoTBlitz Tryhard Ratings Tool v1.0{colors.default}-----\n")
@@ -71,12 +69,7 @@ def fetch(rank, names=[]):
 			hitlist = [{'spa_id': userid(names), 'score': 0000, 'nickname': names[0], 'clan_tag': "AFK"}] # FIX THIS: STORE USERID TOO
 			bar.next()
 		bar.finish
-		#battles = custom(rank, hitlist)
 		battles = latest(rank, hitlist)
-
-
-
-
 	else:
 		with progress.bar.ChargingBar("Fetching Leaderboard:", max=1) as bar:
 			try:
@@ -91,10 +84,6 @@ def fetch(rank, names=[]):
 				exit("Nobody on leaderboard")
 		battles = latest(rank, hitlist)
 
-
-
-
-
 	with progress.bar.ChargingBar("Loading Current Sweats:", max=1) as plebs: # Meme
 		if len(battles) != rank:
 			exit("Error in checking battle times")
@@ -108,7 +97,7 @@ def fetch(rank, names=[]):
 		else:
 			period = int(time.time()) - battles[x][hitlist[x]['spa_id']]
 		unit = "secs"
-		if period <= 10800: #TODO: Fine tune these thresholds, add user input var for this?
+		if period <= 10800:
 			if period <= 3600:
 				if period <= 360:
 					if period <= 60:
@@ -142,12 +131,7 @@ def fetch(rank, names=[]):
 			status = colors.grey
 			period = str(int((period/60)/60))
 			unit = "hrs"
-
 		output(x, hitlist, battles, period, unit, status)
-
-
-
-
 
 
 
@@ -163,31 +147,10 @@ def latest(rank, hitlist):
 	bar.finish()
 	return latest
 
-"""
-def custom(rank, hitlist):
-	with progress.bar.ChargingBar("Fetching Player Battles:", max=30) as bar:
-		latest = []
-		try:
-			for i in range(rank):
-				posix = {userid(hitlist[0]): lastbattle(userid(hitlist[0]), hitlist[0])}
-				latest.append(posix)
-				bar.next()
-		except ConnectionError:
-			print("HTTP Request Error")
-	bar.finish()
-	return latest
-"""
-
-
-
-
-
-
 
 
 def output(x, hitlist, latest, period, unit, status):
 	print("\n%s===============================================%s" % (colors.blue, colors.default))
-#	print(f"      {hitlist[x]['nickname']}", "%s[%s] %s-%s" % (colors.grey, hitlist[x]['clan_tag'], colors.default, colors.magenta), hitlist[x]['score'], colors.default) # Nightmare to align for fuck sake
 	print("         %s%s%s -" % (colors.magenta, hitlist[x]['score'], colors.default), hitlist[x]['nickname'] + "%s[%s]%s" % (colors.grey, hitlist[x]['clan_tag'], colors.default)) # Points first in same column
 	print("    %s%s%s" % (status, time.strftime("%A %d %B %Y %I:%M:%S%p %Z", time.localtime(latest[x][hitlist[x]['spa_id']])), colors.default)) # Last battle time
 	print("\t        ", f"{colors.grey}{period}{unit}{colors.default} ago")
