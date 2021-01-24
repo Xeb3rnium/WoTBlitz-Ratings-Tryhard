@@ -48,7 +48,7 @@ def main(): # Yes I know I should be using argparse stfu
 			init(30)
 		elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
 			help()
-		elif sys.argv[1] == "-c" and len(sys.argv) == 3 and isinstance(int(sys.argv[2]), int):
+		elif sys.argv[1] == "-c" and len(sys.argv) == 3 and isinstance(int(sys.argv[2]), int) and int(sys.argv[2]) > 0:
 			init(int(sys.argv[2]))
 		elif sys.argv[1] == "-u" and len(sys.argv) == 3 and isinstance(sys.argv[2], str):
 			init(1, names=[str(sys.argv[2])])
