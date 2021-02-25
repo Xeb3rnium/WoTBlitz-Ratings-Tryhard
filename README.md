@@ -1,7 +1,7 @@
 # WoTBlitz Ratings Tool
 Tired of being clapped by battle spamming sweats? Need to stalk the sleep schedules of unicums? Then this Ratings tool is for you!
 
-Small cli python script for monitoring Ratings activity and threat modelling certain players on the leaderboard, inspired by <a href="https://github.com/x0rz/tweets_analyzer">x0rz's Tweet Analyzer</a> and some other shit while I was off my gob
+Small cli python script for monitoring Ratings activity and threat modelling certain players on the leaderboard, inspired by <a href="https://github.com/x0rz/tweets_analyzer">x0rz's Tweet Analyzer</a> and unhealthy ambitions for an IS-6 Fearless :)
 <br><br><br>
 ![Rolling's Analysis](https://media.discordapp.net/attachments/307258554581254144/783890501576949760/lmao.png)
 Thanks to Jylpah, Topdawg and RollingSwarm for useful input
