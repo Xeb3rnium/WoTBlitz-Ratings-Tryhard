@@ -40,12 +40,14 @@ userid = lambda nick: str(curl(API + "list/?application_id=%s&search=%s" % (APP_
 
 lastbattle = lambda uid, nick: curl(API + "info/?application_id=%s&account_id=%s" % (APP_ID, uid)).json()['data'][str(uid)]['last_battle_time'] if curl(API + "info/?application_id=%s&account_id=%s" % (APP_ID, uid)).json()['status'] == "ok" else exit("Error in fetching last battle timestamp")
 
-
+uid = lambda nick: str(curl(API + "list/?application_id=%s&search=%s" % (APP_ID, nick)).json()['data'][0]['account_id']) #Function for just userIds
 
 def main(): # Yes I know I should be using argparse stfu
 	try:
 		if len(sys.argv) == 1:
 			init(30)
+		elif(sys.argv[1] == "-a" and len(sys.argv) == 3 and isinstance(sys.argv[2], str)):
+			print(uid(str(sys.argv[2])))
 		elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
 			help()
 		elif sys.argv[1] == "-c" and len(sys.argv) == 3 and isinstance(int(sys.argv[2]), int) and int(sys.argv[2]) > 0:
