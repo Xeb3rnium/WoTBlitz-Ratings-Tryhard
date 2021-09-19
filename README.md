@@ -43,6 +43,7 @@ Optional Arguments:
     -h, --help          Prints usage help
     -c COUNT            Print custom top players count
     -u USER             Check a player's rating and status
+    -a USER             Grab a player's account ID
     -p PLAYERS          Check list of given players ratings and statuses
 
 Colour Codes:
