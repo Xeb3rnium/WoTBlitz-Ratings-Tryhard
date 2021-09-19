@@ -46,14 +46,14 @@ def main(): # Yes I know I should be using argparse stfu
 	try:
 		if len(sys.argv) == 1:
 			init(30)
-		elif(sys.argv[1] == "-a" and len(sys.argv) == 3 and isinstance(sys.argv[2], str)):
-			print(uid(str(sys.argv[2])))
 		elif(sys.argv[1] == "-h" or sys.argv[1] == "--help"):
 			help()
 		elif sys.argv[1] == "-c" and len(sys.argv) == 3 and isinstance(int(sys.argv[2]), int) and int(sys.argv[2]) > 0:
 			init(int(sys.argv[2]))
 		elif sys.argv[1] == "-u" and len(sys.argv) == 3 and isinstance(sys.argv[2], str):
 			init(1, names=[str(sys.argv[2])])
+		elif(sys.argv[1] == "-a" and len(sys.argv) == 3 and isinstance(sys.argv[2], str)):
+                        print(uid(str(sys.argv[2])))
 		else:
 			help()
 	except:
@@ -168,6 +168,7 @@ def help():
 	print("    -h, --help          Prints usage help")
 	print("    -c COUNT            Print custom top players count")
 	print("    -u USER             Check a player's rating and status")
+	print("    -a USER             Grab a player's account ID")
 	print("    -p PLAYERS          Check list of given players ratings and statuses\n") #TODO
 	print("Colour Codes:")
 	print(f"    {colors.green + colors.inverse}Active a minute ago or less{colors.default}")
