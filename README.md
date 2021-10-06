@@ -75,7 +75,3 @@ Colour Codes:
 <br><br><br>
 oh yeah btw congrats to SPED for getting vibe checked by dual T57 Heavys and getting clapped 9-2 to RGN gg
 ![GET REKT RAIK](https://media.discordapp.net/attachments/307258554581254144/783890466960572426/moe.gif)
-<br>
-^^^ okay Raik im defo keeping this in here if it threatens your ego so much
-![You Piece Of Shit](https://media.discordapp.net/attachments/839157190900187177/889176780471164988/retardraik.png)
-![Raik Retarded Cunt](https://media.discordapp.net/attachments/839157190900187177/889174268406005820/modabuse.png)
